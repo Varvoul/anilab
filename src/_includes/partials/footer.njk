@@ -1,0 +1,129 @@
+<!-- src/_includes/partials/footer.njk -->
+
+<footer class="bg-white dark:bg-footer-dark border-t border-gray-200 dark:border-gray-800 mt-auto">
+    <div class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Main Footer Content -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-6">
+            <!-- Left Column - Brand & Description -->
+            <div class="flex-1 max-w-2xl">
+                <img alt="Quravel Logo" class="h-8 mb-4" src="https://cdn.imgchest.com/files/24d391d36c86.png"/>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    Quravel offers free, ad-free access to top movies and series in stunning quality. 
+                    Stream effortlessly or save for later with easy downloads, perfect for movie lovers on the go!
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-500">
+                    This site does not store any files on our server, we only link to media hosted on 3rd party services.
+                    <br class="hidden sm:block"/>
+                    Watch free movies, watch free TV shows, watch free anime online.
+                </p>
+            </div>
+            
+            <!-- Right Column - Links & Copyright -->
+            <div class="flex flex-col items-center md:items-end gap-4 w-full md:w-auto">
+                <!-- Quick Links -->
+                <div class="flex flex-wrap gap-4 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    <a class="hover:text-primary transition-colors" href="/">Home</a>
+                    <a class="hover:text-primary transition-colors" href="https://editor.wix.com/wixel-view/forms/7405900275916997729">Sent Request</a>
+                    <a class="hover:text-primary transition-colors" href="https://editor.wix.com/wixel-view/forms/7405900275916997729">Contact Us</a>
+                </div>
+                
+                <!-- Copyright - FIXED LINE 54 -->
+                <div class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center md:text-right w-full">
+                    <span class="text-primary font-bold">Quravel</span> • Free Streaming Platform
+                    <br/>
+                    © 2025 Quravel • All rights reserved
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Section - Legal & Navigation -->
+        <div class="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <!-- Legal Links -->
+                <div class="flex flex-wrap gap-4 text-xs text-gray-500 dark:text-gray-500">
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary transition-colors">DMCA</a>
+                </div>
+                
+                <!-- Back to Top Button -->
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                        class="text-xs text-gray-500 hover:text-primary flex items-center gap-1 transition-colors">
+                    <span class="material-symbols-outlined text-sm">arrow_upward</span>
+                    Back to Top
+                </button>
+            </div>
+            
+            <!-- Disclaimer -->
+            <div class="mt-6 text-center">
+                <p class="text-[10px] text-gray-500 dark:text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    Disclaimer: Quravel is an independent streaming platform. All content is provided by third-party services. 
+                    We do not host any videos or files on our servers. All trademarks and copyrights belong to their respective owners. 
+                    By using this site, you agree to our terms of service.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Sticky Bottom Footer for Mobile -->
+<div class="fixed bottom-0 left-0 w-full z-30 bg-surface-dark/90 dark:bg-[#1A1D29]/80 border-t border-gray-800 p-4 flex justify-between items-center lg:hidden">
+    <div class="flex items-center gap-2">
+        <a href="/" class="text-white hover:text-primary transition-colors">
+            <span class="material-symbols-outlined">home</span>
+        </a>
+        <a href="/search" class="text-white hover:text-primary transition-colors ml-4">
+            <span class="material-symbols-outlined">search</span>
+        </a>
+        <a href="/updates" class="text-white hover:text-primary transition-colors ml-4">
+            <span class="material-symbols-outlined">update</span>
+        </a>
+    </div>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+            class="text-white hover:text-primary transition-colors">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+</div>
+
+<!-- Footer JavaScript -->
+<script>
+    // Back to top functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopBtn = document.querySelector('button[onclick*="scrollTo"]');
+        
+        // Show/hide back to top button on scroll
+        window.addEventListener('scroll', function() {
+            const mobileStickyFooter = document.querySelector('.fixed.bottom-0');
+            if (mobileStickyFooter) {
+                if (window.scrollY > 300) {
+                    mobileStickyFooter.classList.remove('hidden');
+                } else {
+                    mobileStickyFooter.classList.add('hidden');
+                }
+            }
+        });
+        
+        // Initialize current year if needed
+        const yearElement = document.querySelector('[data-current-year]');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    });
+    
+    // Smooth scroll for anchor links in footer
+    document.querySelectorAll('footer a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
