@@ -1,0 +1,443 @@
+[
+  {
+    "id": "mha-s1",
+    "slug": "my-hero-academia-season-1",
+    "title": "My Hero Academia Season 1",
+    "originalTitle": "Boku no Hero Academia",
+    "japaneseTitle": "僕のヒーローアカデミア",
+    "searchableTitle": "My Hero Academia Season 1 Boku no Hero Academia",
+    "type": "anime",
+    "category": "action",
+    "year": 2016,
+    "rating": 8.0,
+    "description": "In a world where 80% of humanity possesses 'Quirks,' Izuku Midoriya is born powerless but gains a chance to become a hero after a fated meeting with All Might.",
+    "genres": ["Animation", "Action", "School"],
+    "allGenres": "Animation Action School",
+    "poster": "https://cdn.myanimelist.net/images/anime/10/78745l.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/6v6pBvM6oXG7WpYm8M9r8R0R6j.jpg",
+    "popularity": 99,
+    "featured": false,
+    "duration": "24 min",
+    "certification": "TV-14",
+    "status": "completed",
+    "studio": "Bones",
+    "cast": ["Daiki Yamashita", "Kenta Miyake", "Nobuhiko Okamoto"],
+    "trailer": "https://www.youtube.com/watch?v=-77UEct0K7Q",
+    "dateAdded": "2024-12-16",
+    "country": "Japan",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "Izuku Midoriya: Origin",
+            "duration": "24 min",
+            "servers": {
+              "raw": [
+                { "name": "Raw-HD-01", "url": "https://server-raw.com/mha-s1-e1-1" },
+                { "name": "Raw-HD-02", "url": "https://server-raw.com/mha-s1-e1-2" },
+                { "name": "Raw-HD-03", "url": "https://server-raw.com/mha-s1-e1-3" }
+              ],
+              "sub": [
+                { "name": "Sub-HD-01", "url": "https://server-sub.com/mha-s1-e1-1" },
+                { "name": "Sub-HD-02", "url": "https://server-sub.com/mha-s1-e1-2" },
+                { "name": "Sub-HD-03", "url": "https://server-sub.com/mha-s1-e1-3" }
+              ],
+              "dub": [
+                { "name": "Dub-HD-01", "url": "https://server-dub.com/mha-s1-e1-1" },
+                { "name": "Dub-HD-02", "url": "https://server-dub.com/mha-s1-e1-2" },
+                { "name": "Dub-HD-03", "url": "https://server-dub.com/mha-s1-e1-3" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "the-fantastic-four-first-steps-2025",
+    "slug": "the-fantastic-four-first-steps-2025",
+    "title": "The Fantastic Four: First Steps",
+    "originalTitle": "The Fantastic Four: First Steps",
+    "searchableTitle": "The Fantastic Four: First Steps Fantastic Four 2025",
+    "type": "movie",
+    "category": "action",
+    "year": 2025,
+    "rating": 0.0,
+    "description": "Marvel's First Family enters the MCU. Set in a retro-futuristic 1960s, the team must balance their new powers with a cosmic threat.",
+    "genres": ["Action", "Sci-Fi", "Adventure"],
+    "allGenres": "Action Sci-Fi Adventure",
+    "poster": "https://image.tmdb.org/t/p/original/hlr98oSh996qqW.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/jjk0_backdrop.jpg",
+    "popularity": 97,
+    "featured": false,
+    "duration": "Upcoming",
+    "certification": "PG-13",
+    "status": "upcoming",
+    "studio": "Marvel Studios",
+    "cast": ["Pedro Pascal", "Vanessa Kirby", "Joseph Quinn", "Ebon Moss-Bachrach"],
+    "trailer": "https://www.youtube.com/results?search_query=fantastic+four+2025+teaser",
+    "dateAdded": "2024-12-17",
+    "country": "USA",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "The Fantastic Four: First Steps",
+            "duration": "Upcoming",
+            "servers": {
+              "raw": [
+                { "name": "Raw-HD-01", "url": "https://server-raw.com/ff-2025-1" },
+                { "name": "Raw-HD-02", "url": "https://server-raw.com/ff-2025-2" },
+                { "name": "Raw-HD-03", "url": "https://server-raw.com/ff-2025-3" }
+              ],
+              "sub": [
+                { "name": "Sub-HD-01", "url": "https://server-sub.com/ff-2025-1" },
+                { "name": "Sub-HD-02", "url": "https://server-sub.com/ff-2025-2" },
+                { "name": "Sub-HD-03", "url": "https://server-sub.com/ff-2025-3" }
+              ],
+              "dub": [
+                { "name": "Dub-HD-01", "url": "https://server-dub.com/ff-2025-1" },
+                { "name": "Dub-HD-02", "url": "https://server-dub.com/ff-2025-2" },
+                { "name": "Dub-HD-03", "url": "https://server-dub.com/ff-2025-3" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jurassic-world-rebirth-2025",
+    "slug": "jurassic-world-rebirth-2025",
+    "title": "Jurassic World Rebirth",
+    "originalTitle": "Jurassic World Rebirth",
+    "searchableTitle": "Jurassic World Rebirth Jurassic World 2025",
+    "type": "movie",
+    "category": "action",
+    "year": 2025,
+    "rating": 0.0,
+    "description": "A new era of the Jurassic franchise begins. Five years after the events of Dominion, a specialized team races to secure DNA samples from the world's most dangerous dinosaurs.",
+    "genres": ["Action", "Sci-Fi", "Adventure"],
+    "allGenres": "Action Sci-Fi Adventure",
+    "poster": "https://image.tmdb.org/t/p/original/bxWZCCq8ojQygv3pULopfoRr1HB.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/tcYO8ay3A0liCWxHu2creU3Q9IB.jpg",
+    "popularity": 96,
+    "featured": false,
+    "duration": "Upcoming",
+    "certification": "PG-13",
+    "status": "upcoming",
+    "studio": "Universal Pictures",
+    "cast": ["Scarlett Johansson", "Jonathan Bailey", "Mahershala Ali"],
+    "trailer": "https://www.youtube.com/results?search_query=jurassic+world+rebirth+trailer",
+    "dateAdded": "2024-12-17",
+    "country": "USA",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "Jurassic World Rebirth",
+            "duration": "Upcoming",
+            "servers": {
+              "raw": [
+                { "name": "Raw-HD-01", "url": "https://server-raw.com/jw-rebirth-1" },
+                { "name": "Raw-HD-02", "url": "https://server-raw.com/jw-rebirth-2" },
+                { "name": "Raw-HD-03", "url": "https://server-raw.com/jw-rebirth-3" }
+              ],
+              "sub": [
+                { "name": "Sub-HD-01", "url": "https://server-sub.com/jw-rebirth-1" },
+                { "name": "Sub-HD-02", "url": "https://server-sub.com/jw-rebirth-2" },
+                { "name": "Sub-HD-03", "url": "https://server-sub.com/jw-rebirth-3" }
+              ],
+              "dub": [
+                { "name": "Dub-HD-01", "url": "https://server-dub.com/jw-rebirth-1" },
+                { "name": "Dub-HD-02", "url": "https://server-dub.com/jw-rebirth-2" },
+                { "name": "Dub-HD-03", "url": "https://server-dub.com/jw-rebirth-3" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "voldemort-origins-of-the-heir-2026",
+    "slug": "voldemort-origins-of-the-heir-2026",
+    "title": "Voldemort: Origins of the Heir",
+    "originalTitle": "Voldemort: Origins of the Heir",
+    "searchableTitle": "Voldemort Origins of the Heir Harry Potter 2026",
+    "type": "movie",
+    "category": "action",
+    "year": 2026,
+    "rating": 0.0,
+    "description": "While initially a fan project, HBO's upcoming Harry Potter reboot series has sparked renewed interest in the origins of Tom Riddle. This entry tracks the anticipated 2026 window for the Wizarding World's return.",
+    "genres": ["Fantasy", "Drama", "Adventure"],
+    "allGenres": "Fantasy Drama Adventure",
+    "poster": "https://image.tmdb.org/t/p/original/6EiRUJTLqh7g9AtvYpTft8BDN3i.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/s16H6tpS2bnqUZv9pUlynpxC2no.jpg",
+    "popularity": 94,
+    "featured": false,
+    "duration": "Upcoming",
+    "certification": "PG-13",
+    "status": "upcoming",
+    "studio": "Warner Bros. / HBO",
+    "cast": ["To Be Announced"],
+    "trailer": "https://www.youtube.com/results?search_query=harry+potter+hbo+series+teaser",
+    "dateAdded": "2024-12-17",
+    "country": "USA",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "Voldemort: Origins of the Heir",
+            "duration": "Upcoming",
+            "servers": {
+              "raw": [
+                { "name": "Raw-HD-01", "url": "https://server-raw.com/voldemort-1" },
+                { "name": "Raw-HD-02", "url": "https://server-raw.com/voldemort-2" },
+                { "name": "Raw-HD-03", "url": "https://server-raw.com/voldemort-3" }
+              ],
+              "sub": [
+                { "name": "Sub-HD-01", "url": "https://server-sub.com/voldemort-1" },
+                { "name": "Sub-HD-02", "url": "https://server-sub.com/voldemort-2" },
+                { "name": "Sub-HD-03", "url": "https://server-sub.com/voldemort-3" }
+              ],
+              "dub": [
+                { "name": "Dub-HD-01", "url": "https://server-dub.com/voldemort-1" },
+                { "name": "Dub-HD-02", "url": "https://server-dub.com/voldemort-2" },
+                { "name": "Dub-HD-03", "url": "https://server-dub.com/voldemort-3" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "superman-2025",
+    "slug": "superman-2025",
+    "title": "Superman",
+    "originalTitle": "Superman",
+    "searchableTitle": "Superman 2025 James Gunn DC",
+    "type": "movie",
+    "category": "action",
+    "year": 2025,
+    "rating": 0.0,
+    "description": "Directed by James Gunn, this film follows Superman as he reconciles his heritage with his human upbringing. He is the embodiment of truth, justice, and a better tomorrow.",
+    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "allGenres": "Action Adventure Sci-Fi",
+    "poster": "https://image.tmdb.org/t/p/original/78ba8N6T96GTMq98Y6y69HkWvM7s.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/5mY69M7sIu7j69HkWvM7sIu7j.jpg",
+    "popularity": 100,
+    "featured": true,
+    "duration": "Upcoming",
+    "certification": "PG-13",
+    "status": "upcoming",
+    "studio": "DC Studios / Warner Bros.",
+    "cast": ["David Corenswet", "Rachel Brosnahan", "Nicholas Hoult"],
+    "trailer": "https://www.youtube.com/results?search_query=superman+2025+official+trailer",
+    "dateAdded": "2024-12-17",
+    "country": "USA",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "Superman",
+            "duration": "Upcoming",
+            "servers": {
+              "raw": [
+                { "name": "Raw-HD-01", "url": "https://server-raw.com/superman-2025-1" },
+                { "name": "Raw-HD-02", "url": "https://server-raw.com/superman-2025-2" },
+                { "name": "Raw-HD-03", "url": "https://server-raw.com/superman-2025-3" }
+              ],
+              "sub": [
+                { "name": "Sub-HD-01", "url": "https://server-sub.com/superman-2025-1" },
+                { "name": "Sub-HD-02", "url": "https://server-sub.com/superman-2025-2" },
+                { "name": "Sub-HD-03", "url": "https://server-sub.com/superman-2025-3" }
+              ],
+              "dub": [
+                { "name": "Dub-HD-01", "url": "https://server-dub.com/superman-2025-1" },
+                { "name": "Dub-HD-02", "url": "https://server-dub.com/superman-2025-2" },
+                { "name": "Dub-HD-03", "url": "https://server-dub.com/superman-2025-3" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mission-impossible-dead-reckoning-part-2",
+    "slug": "mission-impossible-dead-reckoning-part-two",
+    "title": "Mission: Impossible - Dead Reckoning Part Two",
+    "originalTitle": "Mission: Impossible - Dead Reckoning Part Two",
+    "searchableTitle": "Mission Impossible Dead Reckoning Part Two MI8 2025",
+    "type": "movie",
+    "category": "action",
+    "year": 2025,
+    "rating": 0.0,
+    "description": "Ethan Hunt and his IMF team embark on their most dangerous mission yet to track down a terrifying new weapon that threatens all of humanity.",
+    "genres": ["Action", "Adventure", "Thriller"],
+    "allGenres": "Action Adventure Thriller",
+    "poster": "https://image.tmdb.org/t/p/original/6v6pBvM6oXG7WpYm8M9r8R0R6j.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/vL5o40STRXS2Zrx0mR95t996qqW.jpg",
+    "popularity": 98,
+    "featured": false,
+    "duration": "Upcoming",
+    "certification": "PG-13",
+    "status": "upcoming",
+    "studio": "Paramount Pictures",
+    "cast": ["Tom Cruise", "Hayley Atwell", "Ving Rhames"],
+    "trailer": "https://www.youtube.com/results?search_query=mission+impossible+8+trailer",
+    "dateAdded": "2024-12-17",
+    "country": "USA",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "Mission: Impossible - Dead Reckoning Part Two",
+            "duration": "Upcoming",
+            "servers": {
+              "raw": [
+                { "name": "Raw-HD-01", "url": "https://server-raw.com/mi8-1" },
+                { "name": "Raw-HD-02", "url": "https://server-raw.com/mi8-2" },
+                { "name": "Raw-HD-03", "url": "https://server-raw.com/mi8-3" }
+              ],
+              "sub": [
+                { "name": "Sub-HD-01", "url": "https://server-sub.com/mi8-1" },
+                { "name": "Sub-HD-02", "url": "https://server-sub.com/mi8-2" },
+                { "name": "Sub-HD-03", "url": "https://server-sub.com/mi8-3" }
+              ],
+              "dub": [
+                { "name": "Dub-HD-01", "url": "https://server-dub.com/mi8-1" },
+                { "name": "Dub-HD-02", "url": "https://server-dub.com/mi8-2" },
+                { "name": "Dub-HD-03", "url": "https://server-dub.com/mi8-3" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "puss-in-boots-last-wish-2022",
+    "slug": "puss-in-boots-the-last-wish-2022",
+    "title": "Puss in Boots: The Last Wish",
+    "originalTitle": "Puss in Boots: The Last Wish",
+    "searchableTitle": "Puss in Boots The Last Wish 2022 DreamWorks",
+    "type": "movie",
+    "category": "animation",
+    "year": 2022,
+    "rating": 7.8,
+    "description": "Puss in Boots discovers that his passion for adventure has taken its toll: he has burned through eight of his nine lives. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
+    "genres": ["Animation", "Adventure", "Comedy"],
+    "allGenres": "Animation Adventure Comedy",
+    "poster": "https://image.tmdb.org/t/p/original/kuf6evRbcS3UOAfmH0HNsCc1SPg.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/r9oUsaruelv3YmZdqaoBcSD9p1X.jpg",
+    "popularity": 95,
+    "featured": false,
+    "duration": "102 min",
+    "certification": "PG",
+    "status": "completed",
+    "studio": "DreamWorks Animation",
+    "cast": ["Antonio Banderas", "Salma Hayek"],
+    "trailer": "https://www.youtube.com/watch?v=RqrXhwS33yc",
+    "dateAdded": "2024-12-17",
+    "country": "USA",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "Puss in Boots: The Last Wish",
+            "duration": "102 min",
+            "servers": {
+              "raw": [
+                { "name": "Raw-HD-01", "url": "https://server-raw.com/puss-boots-1" },
+                { "name": "Raw-HD-02", "url": "https://server-raw.com/puss-boots-2" },
+                { "name": "Raw-HD-03", "url": "https://server-raw.com/puss-boots-3" }
+              ],
+              "sub": [
+                { "name": "Sub-HD-01", "url": "https://server-sub.com/puss-boots-1" },
+                { "name": "Sub-HD-02", "url": "https://server-sub.com/puss-boots-2" },
+                { "name": "Sub-HD-03", "url": "https://server-sub.com/puss-boots-3" }
+              ],
+              "dub": [
+                { "name": "Dub-HD-01", "url": "https://server-dub.com/puss-boots-1" },
+                { "name": "Dub-HD-02", "url": "https://server-dub.com/puss-boots-2" },
+                { "name": "Dub-HD-03", "url": "https://server-dub.com/puss-boots-3" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "top-gun-maverick-2022",
+    "slug": "top-gun-maverick-2022",
+    "title": "Top Gun: Maverick",
+    "originalTitle": "Top Gun: Maverick",
+    "searchableTitle": "Top Gun Maverick 2022 Tom Cruise",
+    "type": "movie",
+    "category": "action",
+    "year": 2022,
+    "rating": 8.2,
+    "description": "After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice.",
+    "genres": ["Action", "Drama"],
+    "allGenres": "Action Drama",
+    "poster": "https://image.tmdb.org/t/p/original/62HCnUTziL75KWvYWnu35Yp10mZ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/Aa91p7mq13L7vYStFc09a9N9YmB.jpg",
+    "popularity": 97,
+    "featured": false,
+    "duration": "130 min",
+    "certification": "PG-13",
+    "status": "completed",
+    "studio": "Paramount Pictures",
+    "cast": ["Tom Cruise", "Miles Teller", "Jennifer Connelly"],
+    "trailer": "https://www.youtube.com/watch?v=giXco2jaZ_4",
+    "dateAdded": "2024-12-17",
+    "country": "USA",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "Top Gun: Maverick",
+            "duration": "130 min",
+            "servers": {
+              "raw": [
+                { "name": "Raw-HD-01", "url": "https://server-raw.com/topgun2-1" },
+                { "name": "Raw-HD-02", "url": "https://server-raw.com/topgun2-2" },
+                { "name": "Raw-HD-03", "url": "https://server-raw.com/topgun2-3" }
+              ],
+              "sub": [
+                { "name": "Sub-HD-01", "url": "https://server-sub.com/topgun2-1" },
+                { "name": "Sub-HD-02", "url": "https://server-sub.com/topgun2-2" },
+                { "name": "Sub-HD-03", "url": "https://server-sub.com/topgun2-3" }
+              ],
+              "dub": [
+                { "name": "Dub-HD-01", "url": "https://server-dub.com/topgun2-1" },
+                { "name": "Dub-HD-02", "url": "https://server-dub.com/topgun2-2" },
+                { "name": "Dub-HD-03", "url": "https://server-dub.com/topgun2-3" }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
