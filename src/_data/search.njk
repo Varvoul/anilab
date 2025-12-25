@@ -1,0 +1,349 @@
+{# search.njk #}
+{% extends "layouts/base.njk" %}
+
+{% block title %}Search Results - Quravel{% endblock %}
+
+{% block head %}
+<!-- Additional styles for search page -->
+<style>
+    .loading-spinner {
+        border: 3px solid #2d3748;
+        border-top: 3px solid #498BBB;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    #live-suggestions {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    #live-suggestions::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    #live-suggestions::-webkit-scrollbar-track {
+        background: #151926;
+    }
+    
+    #live-suggestions::-webkit-scrollbar-thumb {
+        background: #498BBB;
+        border-radius: 3px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <!-- Search Header -->
+    <div class="mb-8">
+        <h1 class="text-2xl md:text-3xl font-bold text-white mb-2">Search Results</h1>
+        
+        <!-- Search Box -->
+        <div class="relative max-w-2xl mt-6">
+            <div class="flex items-center bg-surface-dark rounded-full px-5 py-3 border border-gray-700 focus-within:border-primary transition">
+                <span class="material-symbols-outlined text-gray-400 mr-3">search</span>
+                <input type="text" 
+                       id="search-page-input" 
+                       placeholder="Search movies, anime, TV shows..." 
+                       class="bg-transparent border-none focus:ring-0 w-full text-white outline-none py-1 text-sm md:text-base"
+                       autocomplete="off"
+                       value="{{ search.query or '' }}">
+            </div>
+            
+            <!-- Live Suggestions Dropdown -->
+            <div id="live-suggestions" class="absolute hidden w-full bg-surface-dark mt-2 rounded-xl shadow-2xl z-50 overflow-hidden border border-gray-700">
+                <div id="live-suggestions-list" class="max-h-96 overflow-y-auto"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results-container">
+        <!-- Results will be loaded here by JavaScript -->
+        <div class="text-center py-12">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <p class="text-gray-400">Loading search results...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Search Results Template (Hidden) -->
+<template id="result-template">
+    <a href="#" class="group block">
+        <div class="relative overflow-hidden rounded-lg aspect-[2/3] mb-3">
+            <img src="" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" 
+                 alt="" onerror="this.src='https://via.placeholder.com/300x450?text=Poster'">
+            <div class="absolute top-1 right-1 bg-primary/90 text-white text-[9px] font-bold px-1 rounded">HD</div>
+            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-2">
+                <span class="text-white text-[10px]"></span>
+            </div>
+        </div>
+        <h3 class="font-semibold text-sm line-clamp-1 group-hover:text-primary transition-colors"></h3>
+        <div class="flex justify-between text-[10px] text-gray-500 mt-1">
+            <span></span>
+            <span></span>
+        </div>
+    </a>
+</template>
+{% endblock %}
+
+{% block scripts %}
+<!-- Search JavaScript -->
+<script>
+    // Get query from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('q') || '';
+    
+    // DOM elements
+    const searchInput = document.getElementById('search-page-input');
+    const resultsContainer = document.getElementById('results-container');
+    const liveSuggestions = document.getElementById('live-suggestions');
+    const liveSuggestionsList = document.getElementById('live-suggestions-list');
+    const resultTemplate = document.getElementById('result-template');
+    
+    // Search data
+    let searchDatabase = [];
+    let searchDebounceTimer;
+
+    // Load search data
+    async function loadSearchData() {
+        try {
+            const response = await fetch('/search-data.json');
+            if (response.ok) {
+                searchDatabase = await response.json();
+                console.log('Loaded', searchDatabase.length, 'items for search');
+                performSearch();
+            }
+        } catch (error) {
+            console.error('Failed to load search data:', error);
+            showError('Failed to load search data');
+        }
+    }
+
+    // Perform search
+    function performSearch(query = searchQuery) {
+        if (!query.trim()) {
+            showEmptyState();
+            return [];
+        }
+        
+        const normalizedQuery = query.toLowerCase().trim();
+        const results = searchDatabase.filter(item => {
+            if (!item.title) return false;
+            return item.title.toLowerCase().includes(normalizedQuery) ||
+                   (item.japaneseTitle && item.japaneseTitle.toLowerCase().includes(normalizedQuery)) ||
+                   (item.genres && item.genres.some(genre => 
+                       genre.toLowerCase().includes(normalizedQuery)));
+        });
+        
+        displayResults(results, query);
+        return results;
+    }
+
+    // Display results
+    function displayResults(results, query) {
+        resultsContainer.innerHTML = '';
+        
+        if (results.length === 0) {
+            showNoResults(query);
+            return;
+        }
+        
+        // Update page title
+        document.title = `"${query}" - Search Results - Quravel`;
+        
+        // Create header
+        const header = document.createElement('div');
+        header.className = 'mb-6';
+        header.innerHTML = `
+            <h2 class="text-xl font-bold text-white mb-2">
+                Results for <span class="text-primary">"${query}"</span>
+            </h2>
+            <p class="text-gray-400 text-sm">
+                Found <span class="text-primary font-bold">${results.length}</span> 
+                ${results.length === 1 ? 'result' : 'results'}
+            </p>
+        `;
+        resultsContainer.appendChild(header);
+        
+        // Create grid
+        const grid = document.createElement('div');
+        grid.className = 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6';
+        
+        // Add results to grid
+        results.forEach(item => {
+            const clone = resultTemplate.content.cloneNode(true);
+            const link = clone.querySelector('a');
+            const img = clone.querySelector('img');
+            const title = clone.querySelector('h3');
+            const typeSpan = clone.querySelector('div > span:first-child');
+            const durationSpan = clone.querySelector('div > span:last-child');
+            
+            // Create slug (must match your slug logic)
+            const slug = item.slug || item.title.toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w\-]+/g, '')
+                .replace(/\-\-+/g, '-')
+                .replace(/^-+/, '')
+                .replace(/-+$/, '');
+            
+            // IMPORTANT: Use correct URL path based on your setup
+            // Choose one based on your actual page structure:
+            link.href = `/post/${slug}/`;  // For post details pages
+            // OR: link.href = `/watch/${slug}/`;  // For streaming pages
+            
+            img.src = item.poster || 'https://via.placeholder.com/300x450?text=Poster';
+            img.alt = item.title || 'Show poster';
+            title.textContent = item.title || 'Untitled';
+            typeSpan.textContent = item.type === 'movie' ? 'Movie' : 'TV';
+            durationSpan.textContent = item.duration || 'N/A';
+            
+            grid.appendChild(clone);
+        });
+        
+        resultsContainer.appendChild(grid);
+    }
+
+    // Show empty state
+    function showEmptyState() {
+        resultsContainer.innerHTML = `
+            <div class="text-center py-12">
+                <span class="material-symbols-outlined text-6xl text-gray-700 mb-4">search</span>
+                <h3 class="text-xl font-bold text-white mb-2">Search for Movies & Shows</h3>
+                <p class="text-gray-400 max-w-md mx-auto">
+                    Enter a title, genre, or keyword to find your favorite content
+                </p>
+            </div>
+        `;
+    }
+
+    // Show no results
+    function showNoResults(query) {
+        resultsContainer.innerHTML = `
+            <div class="text-center py-12">
+                <span class="material-symbols-outlined text-6xl text-gray-700 mb-4">search_off</span>
+                <h3 class="text-xl font-bold text-white mb-2">No Results Found</h3>
+                <p class="text-gray-400 mb-6">
+                    No results found for <span class="text-primary">"${query}"</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="window.location.href='/'" 
+                            class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-opacity-90 transition">
+                        Go to Homepage
+                    </button>
+                    <button onclick="searchInput.focus()" 
+                            class="px-4 py-2 bg-surface-dark text-white rounded-lg hover:bg-gray-800 border border-gray-700 transition">
+                        Try Another Search
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    // Show error
+    function showError(message) {
+        resultsContainer.innerHTML = `
+            <div class="text-center py-12">
+                <span class="material-symbols-outlined text-6xl text-red-500 mb-4">error</span>
+                <h3 class="text-xl font-bold text-white mb-2">Search Error</h3>
+                <p class="text-gray-400">${message}</p>
+            </div>
+        `;
+    }
+
+    // Live search suggestions
+    function showLiveSuggestions(results) {
+        if (results.length === 0) {
+            liveSuggestions.classList.add('hidden');
+            return;
+        }
+        
+        liveSuggestionsList.innerHTML = results.slice(0, 6).map(item => {
+            const slug = item.slug || item.title.toLowerCase().replace(/\s+/g, '-');
+            return `
+                <a href="/post/${slug}/" class="flex items-center p-3 hover:bg-gray-800 transition border-b border-gray-700">
+                    <img src="${item.poster || 'https://via.placeholder.com/48x64?text=Poster'}" 
+                         class="w-12 h-16 object-cover rounded shadow mr-3"
+                         onerror="this.src='https://via.placeholder.com/48x64?text=Poster'">
+                    <div class="flex-1">
+                        <h4 class="text-white font-bold text-sm truncate">${item.title}</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">
+                            ${item.type} • ${item.year || 'N/A'} • ${item.rating || '0'}/10
+                        </p>
+                    </div>
+                </a>
+            `;
+        }).join('');
+        
+        liveSuggestions.classList.remove('hidden');
+    }
+
+    // Handle search input
+    function handleSearchInput() {
+        const query = searchInput.value.trim();
+        
+        // Update URL
+        const newUrl = query ? `/search/?q=${encodeURIComponent(query)}` : '/search/';
+        window.history.replaceState(null, '', newUrl);
+        
+        // Clear previous debounce
+        clearTimeout(searchDebounceTimer);
+        
+        // Show live suggestions for long queries
+        if (query.length > 1) {
+            const liveResults = searchDatabase.filter(item => 
+                item.title.toLowerCase().includes(query.toLowerCase())
+            ).slice(0, 6);
+            showLiveSuggestions(liveResults);
+        } else {
+            liveSuggestions.classList.add('hidden');
+        }
+        
+        // Debounce full search
+        searchDebounceTimer = setTimeout(() => {
+            performSearch(query);
+        }, 500);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set initial search value
+        if (searchInput && searchQuery) {
+            searchInput.value = searchQuery;
+        }
+        
+        // Load data and perform initial search
+        loadSearchData();
+        
+        // Setup event listeners
+        if (searchInput) {
+            searchInput.addEventListener('input', handleSearchInput);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch(this.value);
+                }
+            });
+        }
+        
+        // Close suggestions when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !liveSuggestions.contains(e.target)) {
+                liveSuggestions.classList.add('hidden');
+            }
+        });
+        
+        // Focus search input
+        searchInput.focus();
+        searchInput.select();
+    });
+</script>
+{% endblock %}
