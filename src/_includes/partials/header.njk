@@ -1,0 +1,122 @@
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+<!-- Mobile Menu -->
+<div class="fixed top-0 left-0 h-full w-64 bg-white dark:bg-[#151926] z-50 transform -translate-x-full lg:hidden overflow-y-auto shadow-2xl" id="mobile-menu">
+    <div class="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+        <img alt="Quravel Logo" class="h-8 object-contain" src="https://cdn.imgchest.com/files/449aa5626e23.png"/>
+        <button class="text-gray-500 hover:text-primary" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="p-4 space-y-4">
+        <a class="block text-sm font-medium hover:text-primary py-2 border-b border-gray-100 dark:border-gray-800" href="/">Home</a>
+        
+        <div class="py-2 border-b border-gray-100 dark:border-gray-800">
+            <button class="flex items-center justify-between w-full text-sm font-medium hover:text-primary focus:outline-none" onclick="toggleMobileDropdown('genre-mobile')">
+                <span>Genre</span>
+                <span class="material-symbols-outlined text-sm transform transition-transform" id="genre-arrow">expand_more</span>
+            </button>
+            <div class="hidden mt-2 ml-4 space-y-2 text-sm text-gray-500 dark:text-gray-400" id="genre-mobile">
+                <!-- Genre links -->
+            </div>
+        </div>
+        
+        <div class="py-2 border-b border-gray-100 dark:border-gray-800">
+            <button class="flex items-center justify-between w-full text-sm font-medium hover:text-primary focus:outline-none" onclick="toggleMobileDropdown('country-mobile')">
+                <span>Country</span>
+                <span class="material-symbols-outlined text-sm transform transition-transform" id="country-arrow">expand_more</span>
+            </button>
+            <div class="hidden mt-2 ml-4 space-y-2 text-sm text-gray-500 dark:text-gray-400" id="country-mobile">
+                <!-- Country links -->
+            </div>
+        </div>
+        
+        <a class="block text-sm font-medium hover:text-primary py-2 border-b border-gray-100 dark:border-gray-800" href="#">Top IMDB</a>
+        <a class="block text-sm font-medium hover:text-primary py-2 border-b border-gray-100 dark:border-gray-800" href="#">Updates</a>
+        <a class="block text-sm font-medium hover:text-primary py-2" href="https://editor.wix.com/wixel-view/forms/7405900275916997729">Sent Request</a>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="fixed top-0 w-full z-40 bg-white/95 dark:bg-[#0B0E19]/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 shadow-sm">
+    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <button class="lg:hidden text-gray-600 dark:text-gray-200 focus:outline-none" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                <a class="hover:text-primary transition-colors {% if page.url == '/' %}text-primary{% endif %}" href="/">Home</a>
+                
+                <!-- Genre Dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center space-x-1 hover:text-primary transition-colors focus:outline-none py-4">
+                        <span>Genre</span>
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </button>
+                    <div class="absolute top-full left-0 w-[600px] bg-white dark:bg-[#1A1D29] rounded-b-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border-t-2 border-primary grid grid-cols-4 gap-4 p-6 z-50">
+                        <!-- Genre links -->
+                    </div>
+                </div>
+                
+                <!-- Country Dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center space-x-1 hover:text-primary transition-colors focus:outline-none py-4">
+                        <span>Country</span>
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </button>
+                    <div class="absolute top-full left-0 w-[600px] bg-white dark:bg-[#1A1D29] rounded-b-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border-t-2 border-primary grid grid-cols-4 gap-4 p-6 z-50">
+                        <!-- Country links -->
+                    </div>
+                </div>
+                
+                <a class="hover:text-primary transition-colors" href="#">Top IMDB</a>
+                <a class="hover:text-primary transition-colors" href="#">Updates</a>
+                <a class="hover:text-primary transition-colors" href="https://editor.wix.com/wixel-view/forms/7405900275916997729">Sent Request</a>
+            </nav>
+        </div>
+        
+        <div class="absolute left-1/2 transform -translate-x-1/2">
+            <a class="block" href="/">
+                <img alt="Quravel Logo" class="h-8 md:h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqLjw2b3zIJYAUXSR-0wnqCCSiHxBpWopeX4YkK91UxQUQErP8E3fBTKHGPMn44svm6TkV73RcFl8uZYm6unBNmb_F5B0XAtvw-yAnSKJzR-DIoMzoWA519xKDUhoH8DE4biRu7joxNso-Ui3U1pLkiOaL02GPgdP6zHD6BmF10aMv5toxV6-cghRon9fHKmJihBEYz21Rmh4zx3Kz6pm1xk_o-fcYhwfAxeV0fx3eRLBxYIrLqzBBjdbVn1H1B5RVpSEDH9EgFZ4"/>
+            </a>
+        </div>
+        
+        <div class="flex items-center space-x-4 relative">
+            <!-- Desktop Search -->
+            <div class="relative hidden sm:block">
+                <input class="bg-gray-100 dark:bg-gray-800 text-sm rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-primary w-48 transition-all dark:text-white border-none" 
+                       placeholder="Search..." type="text" id="main-search"/>
+                <span class="material-symbols-outlined absolute right-3 top-2 text-gray-400 text-lg">search</span>
+                
+                <!-- Search Suggestions Dropdown -->
+                <div id="search-suggestions" class="absolute hidden w-full mt-2 bg-surface-dark rounded-lg shadow-2xl z-50 overflow-hidden border border-gray-700">
+                    <div id="suggestions-list" class="max-h-96 overflow-y-auto"></div>
+                    <a href="/search" id="view-all-btn" class="block w-full text-center p-3 bg-primary text-white font-bold hover:bg-opacity-90">
+                        View All Results
+                    </a>
+                </div>
+            </div>
+            <button class="sm:hidden text-gray-600 dark:text-gray-200" onclick="toggleMobileSearch()">
+                <span class="material-symbols-outlined">search</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Search Bar -->
+    <div class="hidden sm:hidden bg-white dark:bg-[#0B0E19] border-b border-gray-200 dark:border-gray-800 p-3 absolute w-full top-16 left-0 z-30" id="mobile-search-bar">
+        <div class="relative">
+            <input class="w-full bg-gray-100 dark:bg-gray-800 text-sm rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-primary dark:text-white border-none" 
+                   placeholder="Search movies, shows..." type="text" id="mobile-search"/>
+            <span class="material-symbols-outlined absolute right-3 top-2 text-gray-400 text-lg">search</span>
+
+            <!-- Mobile Search Suggestions -->
+            <div id="mobile-search-suggestions" class="absolute hidden w-full mt-2 bg-surface-dark rounded-lg shadow-2xl z-50 overflow-hidden border border-gray-700">
+                <div id="mobile-suggestions-list" class="max-h-80 overflow-y-auto"></div>
+                <a href="/search" id="mobile-view-all-btn" class="block w-full text-center p-3 bg-primary text-white font-bold hover:bg-opacity-90">
+                    View All Results
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
